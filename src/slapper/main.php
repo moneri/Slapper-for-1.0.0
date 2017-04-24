@@ -718,7 +718,7 @@ class main extends PluginBase implements Listener
                             }
                             if (!($typeToUse === "Nothing") && !($theOne === "Blank")) {
                                 $nbt = $this->makeNBT($sender->getSkinData(), $sender->getSkinId(), $name, $inventory, $sender->getYaw(), $sender->getPitch(), $playerX, $playerY, $playerZ);
-                                $slapperEntity = Entity::createEntity($typeToUse, $sender->getLevel()->getChunk($playerX >> 4, $playerZ >> 4), $nbt);
+                                $slapperEntity = Entity::createEntity($typeToUse, $sender->getLevel(), $nbt);
                                 $sender->sendMessage($this->prefix . $theOne . " entity spawned with name " . TextFormat::WHITE . "\"" . TextFormat::BLUE . $name . TextFormat::WHITE . "\"" . TextFormat::GREEN . " and entity ID " . TextFormat::BLUE . $slapperEntity->getId());
                             }
                             if (isset($slapperEntity) && $slapperEntity instanceof SlapperHuman) {
